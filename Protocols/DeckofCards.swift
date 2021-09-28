@@ -7,30 +7,39 @@
 
 import Foundation
 
-
-
-class DeckofCards: CardsDataSource {
+struct DeckofCards: CardsDataSource {
     var cards: [String] = []
-    var playerName: String?
     
-    func generateDeckofCards(){
-        let suitNames = ["Clubs","Hearts","Diamonds","Spades"]
-        let faceNames = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"]
+    mutating func generateDeckofCards(idiom: String?){
+        var suitNames: [String] = []
+        var faceNames: [String] = []
+        var article: String = ""
+        
+        guard let idiom = idiom else { return }
+        switch idiom {
+        case "spanish":
+            // refference: https://bicyclecards.com/how-to-play/conquian/
+            //             https://www.makeplayingcards.com/sell/marketplace/spanish-playing-cards.html
+            suitNames = ["Bastos","Cups","Oros","Espadas"]
+            faceNames = ["As", "2", "3", "4", "5", "6", "7", "Jota", "Reina", "Rey"]
+            article = "de"
+            break
+        case "english":
+            suitNames = ["Clubs","Hearts","Diamonds","Spades"]
+            faceNames = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"]
+            article = "of"
+            break
+        default:
+            suitNames = ["Clubs","Hearts","Diamonds","Spades"]
+            faceNames = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"]
+            article = "of"
+            break
+        }
         
         for suitIndex in 0...suitNames.count - 1{
             for faceIndex in 0...faceNames.count - 1{
-                cards.append("\(faceNames[faceIndex])" + " of " + "\(suitNames[suitIndex])")
+                cards.append("\(faceNames[faceIndex])" + " \(article) " + "\(suitNames[suitIndex])")
             }
         }
     }
-    
-    func getUserName() -> String {
-        return self.playerName ?? "Unamed"
-    }
-    
-    func setUserName(player: String) {
-        self.playerName = player
-    }
-    
-    
 }

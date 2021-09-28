@@ -15,6 +15,7 @@
 		601C546426FE240900A057B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 601C546226FE240900A057B8 /* LaunchScreen.storyboard */; };
 		601C546C26FE25B900A057B8 /* CardsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601C546B26FE25B900A057B8 /* CardsDataSource.swift */; };
 		601C546E26FE2B7C00A057B8 /* DeckofCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601C546D26FE2B7C00A057B8 /* DeckofCards.swift */; };
+		60D418BA270375740027B722 /* SpanishDeckofCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D418B9270375740027B722 /* SpanishDeckofCards.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		601C546526FE240900A057B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		601C546B26FE25B900A057B8 /* CardsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsDataSource.swift; sourceTree = "<group>"; };
 		601C546D26FE2B7C00A057B8 /* DeckofCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckofCards.swift; sourceTree = "<group>"; };
+		60D418B9270375740027B722 /* SpanishDeckofCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpanishDeckofCards.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +62,26 @@
 		601C545626FE240700A057B8 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				60D418B5270367710027B722 /* DataSource */,
 				601C545726FE240700A057B8 /* AppDelegate.swift */,
 				601C545926FE240700A057B8 /* SceneDelegate.swift */,
 				601C545B26FE240700A057B8 /* ViewController.swift */,
 				601C546D26FE2B7C00A057B8 /* DeckofCards.swift */,
-				601C546B26FE25B900A057B8 /* CardsDataSource.swift */,
+				60D418B9270375740027B722 /* SpanishDeckofCards.swift */,
 				601C545D26FE240700A057B8 /* Main.storyboard */,
 				601C546026FE240900A057B8 /* Assets.xcassets */,
 				601C546226FE240900A057B8 /* LaunchScreen.storyboard */,
 				601C546526FE240900A057B8 /* Info.plist */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		60D418B5270367710027B722 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				601C546B26FE25B900A057B8 /* CardsDataSource.swift */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +157,7 @@
 			files = (
 				601C546E26FE2B7C00A057B8 /* DeckofCards.swift in Sources */,
 				601C546C26FE25B900A057B8 /* CardsDataSource.swift in Sources */,
+				60D418BA270375740027B722 /* SpanishDeckofCards.swift in Sources */,
 				601C545C26FE240700A057B8 /* ViewController.swift in Sources */,
 				601C545826FE240700A057B8 /* AppDelegate.swift in Sources */,
 				601C545A26FE240700A057B8 /* SceneDelegate.swift in Sources */,

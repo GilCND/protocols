@@ -7,15 +7,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    var deckOfCards = DeckofCards()
+class ViewController: UIViewController{
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var deckOfCards = DeckofCards()
+        let spanishDeckofCards = SpanishDeckofCards()
         
-        deckOfCards.generateDeckofCards()
+        deckOfCards.generateDeckofCards(idiom: "english")
         print(deckOfCards.cards)
-        deckOfCards.setUserName(player: "Gil")
-        print("Player: " + deckOfCards.getUserName())
+        spanishDeckofCards.generateDeckofCards(idiom: nil)
+        print(spanishDeckofCards.cards)
     }
 }
