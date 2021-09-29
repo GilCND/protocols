@@ -8,16 +8,11 @@
 import UIKit
 
 class ViewController: UIViewController{
-
+    var dataSource: CardsDataSource?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var deckOfCards = DeckofCards()
-        let spanishDeckofCards = SpanishDeckofCards()
-        
-        deckOfCards.generateDeckofCards(idiom: "english")
-        print(deckOfCards.cards)
-        spanishDeckofCards.generateDeckofCards(idiom: nil)
-        print(spanishDeckofCards.cards)
+        dataSource = SpanishDeckofCards()
+        print(dataSource?.cards)
     }
 }

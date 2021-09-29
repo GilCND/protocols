@@ -9,8 +9,9 @@ import Foundation
 
 protocol CardsDataSource {
     var cards: [String] { get }
-    
-    mutating func generateDeckofCards(idiom: String?)
+    var suitNames: [String] { get }
+    var faceNames: [String] { get }
+    var article: String { get }
 }
 
 protocol UserDataSource {
@@ -22,4 +23,16 @@ protocol UserDataSource {
     func saveUserName(UserName: String)
     func saveScore()
     func calculateMoney()
+}
+typealias GameDataSource = CardsDataSource & UserDataSource
+
+extension CardsDataSource {
+    var cards: [String] {
+        //functional programming
+        suitNames.flatMap { suitName in  // -> [String]
+            faceNames.map { faceName in  // -> String
+                "\(faceName)" + " \(article) " + "\(suitName)"
+            }
+        }
+    }
 }
